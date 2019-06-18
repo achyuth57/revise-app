@@ -1,3 +1,7 @@
+
+@import './styles/base.css';
+@import './styles/header.css';
+@import './styles/movieCards.css';
 .App {
   text-align: center;
 }

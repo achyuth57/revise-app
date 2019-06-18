@@ -1,15 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Form from './components/form'
+import Header from './components/Header'
+import Movies from './components/movie/Movies'
+import FireBaseLogin from './fire-auth'
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      title:'Fire Base Authentication'
+    }
+  }
+  render(){
+
   return (
     <div className="App">
-       <h1>Hello React</h1>
-       <Form />
+      <Header title={this.state.title} />
+      <div className="container">
+        {/* <Movies /> */}
+        <FireBaseLogin />
+
+      </div>
     </div>
   );
+  }
 }
 
 export default App;
