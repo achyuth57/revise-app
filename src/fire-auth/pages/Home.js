@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-function Home() {
-    return (
-        <div>
-            Home Page
-        </div>
-    )
-}
+import FirebaseContext from '../../fire-auth';
 
-export default Home
+const SomeComponent = () => (
+  <FirebaseContext.Consumer>
+    {firebase => {
+      return <div>I've access to Firebase and render something.</div>;
+    }}
+  </FirebaseContext.Consumer>
+);
+
+export default SomeComponent;

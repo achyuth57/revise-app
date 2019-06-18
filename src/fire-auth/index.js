@@ -1,17 +1,6 @@
-import React, { Component } from 'react'
+import FirebaseContext from './context';
+import Firebase from './config';
 
+export default Firebase;
 
- class FireBaseLogin extends Component {
-     constructor(){
-         super()
-     }
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
-}
-
-export default FireBaseLogin
+export { FirebaseContext };

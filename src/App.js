@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header'
 import Movies from './components/movie/Movies'
-import FireBaseLogin from './fire-auth'
+import Firebase, { FirebaseContext } from './fire-auth/';
 
 class App extends React.Component {
   constructor(props){
@@ -15,10 +15,11 @@ class App extends React.Component {
 
   return (
     <div className="App">
-      <Header title={this.state.title} />
+      
       <div className="container">
         {/* <Movies /> */}
-        <FireBaseLogin />
+        <FirebaseContext.Provider value={new Firebase()}><Header title={this.state.title} /></FirebaseContext.Provider>
+       
 
       </div>
     </div>
