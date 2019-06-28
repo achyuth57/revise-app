@@ -1,64 +1,59 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {BrowserRouter as Router, Link,Route} from 'react-router-dom'
-import * as ROUTES from '../fire-auth/routes'
+import React from "react";
+import PropTypes from "prop-types";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import HomeMainHead from "./HomeComponents/HomeMainHead";
+import AboutComponentContent from "./AboutComponent/AboutComponentContent";
+import LoginComponent from "./Login/LoginComponent";
 
-import LandingPage from '../fire-auth/pages/Landing';
-import SignUpPage from '../fire-auth/pages/SignUp';
-import SignInPage from '../fire-auth/pages/SignIn';
-import PasswordForgetPage from '../fire-auth/pages/PasswordForget';
-import HomePage from '../fire-auth/pages/Home';
-import AccountPage from '../fire-auth/pages/Account';
-import AdminPage from '../fire-auth/pages/Admin';
-
-
-
-const Header = (props) =>(
-    <nav className="nav nav-default header">
-        <div className="container">
-        <div className="row m-auto">
-                <i className="fa fa-film fa-2x text-white my-auto"></i>
-                <div className="h3 ml-3 my-auto text-light" href="/">{props.title}</div>
-</div>
-        </div>
+const Header = props => (
+  <div>
     <Router>
-        <ul>
-      <li>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.LANDING}>Landing</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.HOME}>Home</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.ACCOUNT}>Account</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.ADMIN}>Admin</Link>
-      </li>
-    </ul>
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="/">
+              {props.title}
+            </a>
+          </div>
 
-    <hr />
-      <Route exact path={ROUTES.LANDING} component={LandingPage} />
-      <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-      <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-      <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-      <Route path={ROUTES.HOME} component={HomePage} />
-      <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-      <Route path={ROUTES.ADMIN} component={AdminPage} />
+          <ul className="nav navbar-nav">
+            <li>
+              <Link className="active" to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="" to="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="" to="/register">
+                Register
+              </Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div className="container">
+        <Route exact path="/" component={HomeMainHead} />
+        <Route path="/about" component={AboutComponentContent} />
+        <Route path="/login" component={LoginComponent} />
+      </div>
     </Router>
-    </nav>
+  </div>
 );
 
 Header.defaultProps = {
-    title:'Title'
-}
+  title: "Learning Hooks"
+};
 
-Header.propTypes ={
-    title:PropTypes.string
-}
+Header.propTypes = {
+  title: PropTypes.string
+};
 
-export default Header
+export default Header;
