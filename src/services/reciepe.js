@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import HomeTiles from "../components/HomeComponents/HomeTiles";
 
-export class reciepeService extends Component {
+class reciepeService extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,6 +33,7 @@ export class reciepeService extends Component {
         }
       );
   }
+
   render() {
     const { error, isLoaded, items } = this.state;
     console.log("data:" + items);
@@ -41,7 +42,7 @@ export class reciepeService extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return <HomeTiles item={items} />;
+      return <HomeTiles item={items} loading={isLoaded} />;
     }
   }
 }
