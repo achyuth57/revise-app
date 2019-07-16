@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HomeTiles from "../components/HomeComponents/HomeTiles";
+import Spinner from "../components/loader/Spinner";
 
 class reciepeService extends Component {
   constructor(props) {
@@ -40,9 +41,13 @@ class reciepeService extends Component {
     if (error) {
       return <div>Error : {error.message} No data Populated!</div>;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return (
+        <div>
+          <Spinner />
+        </div>
+      );
     } else {
-      return <HomeTiles item={items} loading={isLoaded} />;
+      return <HomeTiles item={items} />;
     }
   }
 }
