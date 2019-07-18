@@ -2,7 +2,6 @@ import React from "react";
 import "../../styles/Home.css";
 
 function HomeTiles({ item }) {
-  console.log(item);
   return (
     <section id="blog-section">
       <div className="container">

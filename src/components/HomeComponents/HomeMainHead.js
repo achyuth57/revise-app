@@ -1,6 +1,5 @@
 import React from "react";
 import PropType from "prop-types";
-import HomeTiles from "./HomeTiles";
 import ReciepeService from "../../services/reciepe";
 
 const HomeMainHead = props => (

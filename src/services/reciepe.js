@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import HomeTiles from "../components/HomeComponents/HomeTiles";
 import Spinner from "../components/loader/Spinner";
+import SkelitonLoader from "../components/loader/ContentLoader";
 
 class reciepeService extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class reciepeService extends Component {
   componentDidMount() {
     const API_KEY = "ee27b4945bac5d6b09bb80d78d93c6a9";
     const URL = `https://www.food2fork.com/api/search?key=${API_KEY}`;
+
     fetch(URL)
       .then(res => res.json())
       .then(
@@ -37,17 +39,26 @@ class reciepeService extends Component {
 
   render() {
     const { error, isLoaded, items } = this.state;
+    const loadContent = {
+      width: "300px",
+      height: "auto"
+    };
     console.log("data:" + items);
     if (error) {
       return <div>Error : {error.message} No data Populated!</div>;
     } else if (!isLoaded) {
       return (
-        <div>
-          <Spinner />
+        <div className={loadContent}>
+          {/* <Spinner /> */}
+          <SkelitonLoader type="facebook" />
         </div>
       );
     } else {
-      return <HomeTiles item={items} />;
+      return (
+        <div className={loadContent}>
+          <HomeTiles item={items} />
+        </div>
+      );
     }
   }
 }
