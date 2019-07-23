@@ -1,7 +1,19 @@
 import React from "react";
+import ModalComponent from "./ModalComponent";
 
-function AboutComponentContent() {
-  return <div>This About Page</div>;
+function AboutPopup() {
+  return (
+    <>
+      <button
+        type="button"
+        className="btn btn-info btn-lg"
+        data-toggle="modal"
+        data-target="#myModal"
+      >
+        Open Modal
+      </button>
+      <ModalComponent />
+    </>
+  );
 }
-
-export default AboutComponentContent;
+export default AboutPopup;

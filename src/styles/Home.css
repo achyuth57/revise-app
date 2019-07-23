@@ -116,3 +116,6 @@ aside .content-footer > img {
 .social-icon a:nth-of-type(5) {
   color: #3a3a3a;
 }
+.error {
+  color: red;
+}

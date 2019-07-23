@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import HomeMainHead from "./HomeComponents/HomeMainHead";
-import AboutComponentContent from "./AboutComponent/AboutComponentContent";
+import AboutPopup from "./AboutComponent/AboutComponentContent";
 import LoginComponent from "./Login/LoginComponent";
 
 const Header = props => (
@@ -41,7 +41,7 @@ const Header = props => (
       </nav>
       <div className="container">
         <Route exact path="/" component={HomeMainHead} />
-        <Route path="/about" component={AboutComponentContent} />
+        <Route path="/about" component={AboutPopup} />
         <Route path="/login" component={LoginComponent} />
       </div>
     </Router>
@@ -49,7 +49,7 @@ const Header = props => (
 );
 
 Header.defaultProps = {
-  title: "Learning Hooks"
+  title: "First App"
 };
 
 Header.propTypes = {

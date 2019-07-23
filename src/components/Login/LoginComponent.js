@@ -15,7 +15,7 @@ function LoginComponent() {
                       Login
                     </a>
                   </div>
-                  <div class="col-xs-6">
+                  <div className="col-xs-6">
                     <a href="#" id="register-form-link" className="active">
                       Register
                     </a>
