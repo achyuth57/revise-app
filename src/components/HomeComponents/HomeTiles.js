@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles/Home.css";
-
 function HomeTiles({ item }) {
   return (
     <section id="blog-section">
@@ -16,6 +15,7 @@ function HomeTiles({ item }) {
                       className="img-responsive"
                       alt={item.title}
                     />
+
                     <div className="content-title">
                       <div className="text-center">
                         <h3>

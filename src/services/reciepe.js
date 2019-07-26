@@ -14,8 +14,8 @@ class reciepeService extends Component {
   }
 
   componentDidMount() {
-    const API_KEY = "ee27b4945bac5d6b09bb80d78d93c6a9";
-    // const URL = `https://www.food2fork.com/api/search?key=${API_KEY}`;
+    //const API_KEY = "ee27b4945bac5d6b09bb80d78d93c6a9";
+    //const URL = `https://www.food2fork.com/api/search?key=${API_KEY}`;
     const URL = `https://www.food2fork.com`;
     fetch(URL)
       .then(res => res.json())
@@ -56,8 +56,8 @@ class reciepeService extends Component {
     } else {
       return (
         <div className={loadContent}>
-          {/* <HomeTiles item={items} /> */}
-          <h1>Data Loading here</h1>
+          <HomeTiles item={items} />
+          {/* <h1>Data Loading here</h1> */}
         </div>
       );
     }

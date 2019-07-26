@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HomeMainHead from "./HomeComponents/HomeMainHead";
 import AboutPopup from "./AboutComponent/AboutComponentContent";
 import LoginComponent from "./Login/LoginComponent";
+import RegisterComponent from "./Register/RegisterComponent";
 
 const Header = props => (
   <div>
@@ -42,6 +43,7 @@ const Header = props => (
       <div className="container">
         <Route exact path="/" component={HomeMainHead} />
         <Route path="/about" component={AboutPopup} />
+        <Route path="/register" component={RegisterComponent} />
         <Route path="/login" component={LoginComponent} />
       </div>
     </Router>
