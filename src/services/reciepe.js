@@ -43,7 +43,7 @@ class reciepeService extends Component {
       width: "300px",
       height: "auto"
     };
-    console.log("data:" + items);
+    //console.log("data:" + items);
     if (error) {
       return <div>Error : {error.message} No data Populated!</div>;
     } else if (!isLoaded) {
@@ -56,7 +56,7 @@ class reciepeService extends Component {
     } else {
       return (
         <div className={loadContent}>
-          <HomeTiles item={items} />
+          {/* <HomeTiles item={items} /> */}
           {/* <h1>Data Loading here</h1> */}
         </div>
       );

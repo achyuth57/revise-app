@@ -7,49 +7,50 @@ import AboutPopup from "./AboutComponent/AboutComponentContent";
 import LoginComponent from "./Login/LoginComponent";
 import RegisterComponent from "./Register/RegisterComponent";
 
-const Header = props => (
-  <div>
-    <Router>
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <a className="navbar-brand" href="/">
-              {props.title}
-            </a>
+const Header = props => {
+  return (
+    <div>
+      <Router>
+        <nav className="navbar navbar-default">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <a className="navbar-brand" href="/">
+                {props.title}
+              </a>
+            </div>
+
+            <ul className="nav navbar-nav">
+              <li>
+                <Link className="active" to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="" to="/about">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link className="" to="/register">
+                  Register
+                </Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            </ul>
           </div>
-
-          <ul className="nav navbar-nav">
-            <li>
-              <Link className="active" to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="" to="/about">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link className="" to="/register">
-                Register
-              </Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
+        </nav>
+        <div className="container">
+          <Route exact path="/" component={HomeMainHead} />
+          <Route path="/about" component={AboutPopup} />
+          <Route path="/register" component={RegisterComponent} />
+          <Route path="/login" component={LoginComponent} />
         </div>
-      </nav>
-      <div className="container">
-        <Route exact path="/" component={HomeMainHead} />
-        <Route path="/about" component={AboutPopup} />
-        <Route path="/register" component={RegisterComponent} />
-        <Route path="/login" component={LoginComponent} />
-      </div>
-    </Router>
-  </div>
-);
-
+      </Router>
+    </div>
+  );
+};
 Header.defaultProps = {
   title: "First App"
 };

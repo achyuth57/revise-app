@@ -1,90 +1,98 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<title>Email Notification</title>
-<meta name="viewport" content="width=740">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<style type="text/css">
-@font-face { font-family: 'SF UI Display Medium'; src: local('SF UI Display Medium'), local('SF UI Display Medium'), url('https://email.images.apple.com/rover/aos/moe/Fonts/SFUIDisplay-Medium.ttf'); } 
-@font-face { font-family: 'SF UI Text Semibold'; src: local('SF UI Text Semibold'), local('SF UI Text Semibold'), url('https://email.images.apple.com/rover/aos/moe/Fonts/SFUIText-Semibold.ttf'); } 
-@font-face { font-family: 'SF UI Text Regular'; src: local('SF UI Text Regular'), local('SF UI Text Regular'), url('https://email.images.apple.com/rover/aos/moe/Fonts/SFUIText-Regular.ttf'); } 
-a, a.aapl-link, a.aapl-link:link {
-	text-decoration: none;
-	color:#0070c9
-}
-a:hover {
-	text-decoration: underline
-}
-body {
-	width: 100% !important
-}
-@media only screen and (max-device-width: 768px) {
-#aapl-eyebrow, #aapl-footer {
-	-webkit-text-size-adjust: 120%
-}
-#aapl-eyebrow a, #aapl-footer a, a {
-	color: inherit
-}
-}
-</style>
-<!--[if gte mso 9]>
-<style type="text/css">
-table,td,div,p {font-family: Lucida Sans, Lucida Sans Unicode, Lucida Grande, Arial, Helvetica, Verdana, sans-serif !important; line-height:normal !important}
-</style>
-<![endif]-->
-<!--[if lte mso 7]>
-<style type="text/css">
-table,td,div,p {font-family: Lucida Grande, Lucida Sans, Lucida Sans Unicode, Arial, Helvetica, Verdana, sans-serif !important; line-height:normal}
-</style>
-<![endif]-->
-</head>
+  <body>
+    <style>
+      table tr td {
+        border: 2px solid black;
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+      }
 
-<body bgcolor="#f2f2f2" style="margin:0; padding:0">
-<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" style="margin:0; padding:0; width:100% !important; line-height: 100% !important;">
-  <tr>
-    <td align="center" valign="top" style="background-color:#f2f2f2"><!-- start wrapper //-->
-      
-      <table width="700" border="0" cellpadding="0" celspacing="0"  style="margin:0 auto;" align="center">
-      	<tr>
-      		<td>
-      			<!--Logo starts -->
-                  
-              
-                  
-                  <!--Logo ends --> 
-      		</td>
-        <tr>
+      table tr td {
+        width: 100px;
+        height: 100px;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    </style>
+    <h1>Hello World!</h1>
+    <table>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+    </table>
 
-          <td valign="top" align="left"><!-- start white container -->
-            
-            
-            
-            <!-- end white container --> 
-            
-              
-                  <!--End English Template--></td>
-              </tr>
-				
-            </table>
-            
-            <!-- end white container --> 
-            
-            <!-- start footer text -->
-            
-            <table cellspacing="0" height="10" cellpadding="0" border="0" width="100%">
-              <tr>
+    <button type="button" onclick="myFunction()">Set background color</button>
 
-                <td align="left" valign="top" style="font-family: 'SF UI Text Regular', 'Lucida Grande', 'Helvetica Neue', 'Helvetica', 'Arial', 'Verdana', 'sans-serif'; color:#999999 !important; font-size: 14px; line-height:16px; padding:10px 20px;">${text.Copyright_Text}</td>
-              </tr>
-            </table>
-            
-            <!-- end footer text //--></td>
-        </tr>
-      </table>
-      
-      <!-- end wrapper //--></td>
-  </tr>
-</table>
-</body>
+    <script>
+      function myFunction() {
+        var x = document.getElementsByTagName("table");
+        console.log(x);
+        //var nodes = document.querySelectorAll("div");
+
+        // for (i = 0; i <= nodes.length; i++) {
+        //   if (nodes[i].id == 1) {
+        //     nodes[i].style.backgroundColor = "yellow";
+        //   } else if (nodes[i].id == 2) {
+        //     nodes[i].style.backgroundColor = "red";
+        //   } else if (nodes[i].id == 3) {
+        //     nodes[i].style.backgroundColor = "green";
+        //   }
+        // }
+      }
+      document.addEventListener("click", function(event) {
+        const id = event.target.id;
+        //alert(event.target.id);
+        switch (Number(id)) {
+          case 1:
+            event.target.style.backgroundColor = "yellow";
+            break;
+
+          case 2:
+            event.target.style.backgroundColor = "red";
+            break;
+
+          case 3:
+            event.target.style.backgroundColor = "green";
+            break;
+
+          case 4:
+            event.target.style.backgroundColor = "black";
+            break;
+
+          case 5:
+            event.target.style.backgroundColor = "purple";
+            break;
+
+          case 6:
+            event.target.style.backgroundColor = "orange";
+            break;
+
+          case 7:
+            event.target.style.backgroundColor = "gold";
+            break;
+
+          case 8:
+            event.target.style.backgroundColor = "blue";
+            break;
+
+          case 9:
+            event.target.style.backgroundColor = "grey";
+            break;
+
+          default:
+            event.target.style.backgroundColor = "";
+        }
+      });
+    </script>
+  </body>
 </html>

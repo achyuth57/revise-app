@@ -1,52 +1,77 @@
 import React, { Component } from "react";
 import "../../styles/register.css";
+import axios from "axios";
 class RegisterComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      userId: "",
+      title: "",
+      body: ""
+    };
+  }
+  changeHandler = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+  submitHandler = e => {
+    e.preventDefault();
+    console.log(this.state);
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", this.state)
+      .then(res => console.log(res))
+      .catch(error => console.log(error));
+  };
+
   render() {
+    const { userId, title, body } = this.state;
     return (
       <div>
-        <form id="register-form" method="post" role="presentation">
+        <form
+          onSubmit={this.submitHandler}
+          id="register-form"
+          method="post"
+          role="presentation"
+        >
           <div className="form-group">
             <input
               type="text"
-              name="username"
-              id="username"
-              tabindex="1"
+              name="userId"
+              id="userId"
+              tabIndex="1"
               className="form-control"
-              placeholder="Username"
-              value=""
+              placeholder="userId"
+              value={userId}
+              onChange={this.changeHandler}
             />
           </div>
           <div className="form-group">
             <input
-              type="email"
-              name="email"
-              id="email"
-              tabindex="1"
+              type="text"
+              name="title"
+              id="title"
+              tabIndex="1"
               className="form-control"
-              placeholder="Email Address"
-              value=""
+              placeholder="Title"
+              value={title}
+              onChange={this.changeHandler}
             />
           </div>
           <div className="form-group">
             <input
-              type="password"
-              name="password"
-              id="password"
-              tabindex="2"
+              type="text"
+              name="body"
+              id="body"
+              value={body}
+              tabIndex="2"
               className="form-control"
-              placeholder="Password"
+              placeholder="Body"
+              onChange={this.changeHandler}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="password"
-              name="confirm-password"
-              id="confirm-password"
-              tabindex="2"
-              className="form-control"
-              placeholder="Confirm Password"
-            />
-          </div>
+
           <div className="form-group">
             <div className="row">
               <div className="col-sm-6 col-sm-offset-3">
@@ -54,7 +79,7 @@ class RegisterComponent extends Component {
                   type="submit"
                   name="register-submit"
                   id="register-submit"
-                  tabindex="4"
+                  tabIndex="4"
                   className="form-control btn btn-register"
                   value="Register Now"
                 />

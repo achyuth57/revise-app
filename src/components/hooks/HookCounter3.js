@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function HookCounter3() {
-  const reset = 0;
   const [name, setName] = useState({ firstName: "", lastName: "" });
 
   return (

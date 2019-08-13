@@ -1,5 +1,6 @@
 import React from "react";
 import ModalComponent from "./ModalComponent";
+import ParentComp from "../Context/ParentComp";
 
 function AboutPopup() {
   return (
@@ -13,6 +14,7 @@ function AboutPopup() {
         Open Modal
       </button>
       <ModalComponent />
+      <ParentComp />
     </>
   );
 }
